@@ -1,14 +1,14 @@
 #include <stdio.h>
-#define N 1000000
+#define N 10000000
 int main()
 {
 
-    int n = 0, k = 0;
-    scanf("%d", &n);
+    long long int n = 0, k = 0;
+    scanf("%lld\n", &n);
     char str1[N] = {0};
     char str2[N] = {0};
-    scanf("\n%[^\n]", str1);
-    scanf("%d", &k);
+    scanf("%[^\n]", str1);
+    scanf("%lld", &k);
 
     for (int i = k - 1; i >= 0; i--)
     {
