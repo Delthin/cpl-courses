@@ -2,7 +2,7 @@
 #include <math.h>
 int main(){
     int n = 0;
-    char track[1000] = {0};
+    char track[10] = {0};
     int xa = 0,xb = 0,xc = 0, ya = 0, yb = 0, yc = 0;
     scanf("%d%d%d%d%d%d",&xa,&ya,&xb,&yb,&xc,&yc);
     int x = xa,y= ya;
