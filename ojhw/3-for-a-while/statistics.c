@@ -28,16 +28,35 @@ int main()
         }
     }
 
+
     for (int i = max; i > 0; i--)
     {
-        for (int j = 1; j <= 52; j++)
-        {
-            if (str1[j] < max && str[j] != 0)
-            {
+        for (int j = 1; j <= 52; j+=2)
+        {   if (str1[j] != 0){
+            if (str1[j] - max >= 0){
+                printf ("=");
+            } else {
+                printf (" ");
             }
-            max--;
+        } if (str1[j+1] != 0){
+            if (str1[j+1] - max >= 0){
+                printf ("=");
+            } else {
+                printf (" ");
+            }
+        } if (str1[j] != 0 || str1[j+1] != 0){
+            printf (" ");
         }
+        }max--;
+        printf("\n");
     }
+
+    for(int i = 1; i <= 52; i+=2){
+        if (str1[i] != 0){printf ("-");}
+        if (str1[i+1] != 0){printf ("-");}
+        if (str1[i] != 0 || str1[i+1] != 0){ printf ("-");}
+    }
+
 
     /*for (int i = 1; i <= 52; i++)
     {
