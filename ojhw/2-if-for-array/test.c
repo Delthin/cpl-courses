@@ -1,62 +1,81 @@
-144 曹政 12 : 30 : 21
 #include <stdio.h>
-    int a[10000005];
-int read()
+#include <math.h>
+int route1(int x, int y)
 {
-    char c = getchar();
-    int k = 1;
-    while (c != 10)
+    if (x > 0)
     {
-        a[k] = c;
-        c = getchar();
-        k++;
+        for (int i = 1; i <= x; i++)
+            printf("R");
     }
-}
-int main()
-{
-    int n, k;
-    scanf("%d", &n);
-    char c = getchar();
-    read();
-    scanf("%d", &k);
-    for (int i = k; i >= 1; i--)
+    if (x < 0)
     {
-        printf("%c", a[i]);
+        for (int i = 1; i <= -x; i++)
+            printf("L");
     }
-    for (int i = n; i > k; i--)
+    if (y > 0)
     {
-        printf("%c", a[i]);
+        for (int i = 1; i <= y; i++)
+            printf("U");
+    }
+    if (y < 0)
+    {
+        for (int i = 1; i <= -y; i++)
+            printf("D");
     }
     return 0;
 }
-
-144 曹政 12 : 30 : 32
-#include <stdio.h>
-    int a[10000005];
-int read()
+int route2(int x, int y)
 {
-    char c = getchar();
-    int k = 1;
-    while (c != 10)
+    if (y > 0)
     {
-        a[k] = c;
-        c = getchar();
-        k++;
+        for (int i = 1; i <= y; i++)
+            printf("U");
     }
+    if (y < 0)
+    {
+        for (int i = 1; i <= -y; i++)
+            printf("D");
+    }
+    if (x > 0)
+    {
+        for (int i = 1; i <= x; i++)
+            printf("R");
+    }
+    if (x < 0)
+    {
+        for (int i = 1; i <= -x; i++)
+            printf("L");
+    }
+    return 0;
 }
 int main()
 {
-    int n, k;
-    scanf("%d\n", &n);
-    read();
-    scanf("%d", &k);
-    for (int i = k; i >= 1; i--)
+    int x1, y1, x2, y2, x3, y3;
+    scanf("%d %d %d %d %d %d", &x1, &y1, &x2, &y2, &x3, &y3);
+    if (x1 == x2 && x1 == x3 && ((y1 < y3 && y3 < y2) || (y1 > y3 && y3 > y2)))
     {
-        printf("%c", a[i]);
+        printf("%d\n", abs(x1 - x2) + abs(y1 - y2) + 2);
+        printf("L");
+        route1(0, y2 - y1);
+        printf("R");
+        return 0;
     }
-    for (int i = n; i > k; i--)
+    if (y1 == y2 && y1 == y3 && ((x1 < x3 && x3 < x2) || (x1 > x3 && x3 > x2)))
     {
-        printf("%c", a[i]);
+        printf("%d\n", abs(x1 - x2) + abs(y1 - y2) + 2);
+        printf("U");
+        route1(x2 - x1, 0);
+        printf("D");
+        return 0;
+    }
+    printf("%d\n", abs(x1 - x2) + abs(y1 - y2));
+    if (x3 == x1 || y3 == y2)
+    {
+        route2(x2 - x1, y2 - y1);
+    }
+    else
+    {
+        route1(x2 - x1, y2 - y1);
     }
     return 0;
 }
