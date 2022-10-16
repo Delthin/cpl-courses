@@ -73,16 +73,5 @@ int main()
         if (str1[i] != 0 || str1[i+1] != 0){ printf (" ");}
     }
 
-
-    /*for (int i = 1; i <= 52; i++)
-    {
-        if (i == 27)
-        {
-            printf("\n");
-        }
-        printf("%d", str1[i]);
-    }
-    printf("\n%d", max);*/
-
     return 0;
 }
