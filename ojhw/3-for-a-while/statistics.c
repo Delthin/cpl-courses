@@ -51,10 +51,26 @@ int main()
         printf("\n");
     }
 
-    for(int i = 1; i <= 52; i+=2){
-        if (str1[i] != 0){printf ("-");}
-        if (str1[i+1] != 0){printf ("-");}
+    int nums = 0;
+    for (int i = 1; i <= 52; i++){
+        if (str1[i] != 0){
+            nums++;
+        }
+    }
+
+
+    for (int i = 1; i <= 52; i+=2){
+        if (str1[i] != 0){printf ("-");nums--;}
+        if (str1[i+1] != 0){printf ("-");nums--;}
+        if (nums == 0){break;}
         if (str1[i] != 0 || str1[i+1] != 0){ printf ("-");}
+    } printf ("\n");
+
+    char temp1 = 0;
+    for (int i = 1; i <= 52; i+=2){
+        if (str1[i] != 0){temp1 = (i - 1) / 2 + 97;printf ("%c",temp1);}
+        if (str1[i+1] != 0){temp1 = (i + 1) / 2 + 64;printf ("%c",temp1);}
+        if (str1[i] != 0 || str1[i+1] != 0){ printf (" ");}
     }
 
 
