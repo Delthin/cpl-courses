@@ -1,18 +1,9 @@
-//单行注释
-/*多行注释
-
-
-*/
 #include <stdio.h>
 
 int main()
-// main fuction
 {
-    printf("Hello world!\n");
-    /*\n newline
-    printf print+format
-    */
+    FILE *f = fopen(hello.txt);
+    fprintf(f, "Hello world!\n");
     return 0;
-    // return statement
 }
 // gcc hello.c -o hello
