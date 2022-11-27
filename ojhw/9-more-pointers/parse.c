@@ -45,12 +45,15 @@ int main()
                     {
                         IsFalse = 1;
                         Falsech = *(need + i);
-                        goto false;
+                        goto nottrue;
                     };
                     num++;
                     goto next;
                 }
-                else if (*(str + 1) == *(noneed + i))
+            }
+            for (int i = 0; i < strlen(noneed); i++)
+            {
+                if (*(str + 1) == *(noneed + i))
                 {
                     *(ans1 + num) = *(noneed + i);
                     *(ans2 + num) = 2;
@@ -58,13 +61,15 @@ int main()
                     goto next;
                 }
             }
+
             IsFalse = 2;
             Falsech = *(str + 1);
-            goto false;
+            goto nottrue;
         }
     next:
     }
-    false : if (IsFalse == 1)
+nottrue:
+    if (IsFalse == 1)
     {
         printf("%s: option requires an argument -- '%c'", name, Falsech);
         return 0;
