@@ -1,3 +1,4 @@
+//从s1前往后读到空双重循环最快
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
