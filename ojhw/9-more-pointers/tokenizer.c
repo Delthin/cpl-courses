@@ -1,3 +1,5 @@
+// char *var = "0123456789"
+// strchar(var,*s)
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
